@@ -33,3 +33,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'haml-rails', '~> 2.0', '>= 2.0.1'
 gem 'simple_form'
 gem 'faker'
+gem 'devise'
+gem 'devise-bootstrap-views', '~> 1.0'
