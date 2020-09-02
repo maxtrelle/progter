@@ -3,9 +3,10 @@
   = f.error_notification
   = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
 
-  .form-inputs
+  .form-group
     = f.input :title
-    = f.input :description
+    = f.label :description
+    = f.rich_text_area :description
 
-  .form-actions
-    = f.button :submit
+  .form-group
+    = f.submit class: "btn btn-success"
