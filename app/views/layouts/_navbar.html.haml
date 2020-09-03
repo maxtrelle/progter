@@ -5,10 +5,11 @@
   %button.navbar-toggler{"aria-controls" => "navbarNavAltMarkup", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarNavAltMarkup", "data-toggle" => "collapse", :type => "button"}
     %span.navbar-toggler-icon
   #navbarNavAltMarkup.collapse.navbar-collapse
-    %form.form-inline.my-3.my-lg-0.mx-auto.mr-auto
-      %input.form-control.mr-sm-2{"aria-label" => "Search", :placeholder => "Search", :type => "search"}/
-      %button.btn.btn-outline-success.my-2.my-sm-0{:type => "submit"} Search
-
+    .form-inline.my-2.my-lg-0.mx-auto
+      = form_tag(courses_path, method: "get") do
+        = text_field_tag :title, params[:title], autocomplete: 'off', placeholder: "Search", class: "form-control mr-sm-2"
+        %button.btn.btn-outline-success.my-2.my-sm-0{:type => "submit"} Search
+     
     .navbar-nav.my-2.my-md-0.mr-md-3
       = link_to home_index_path, class: "#{'active' if current_page?(home_index_path)} nav-item nav-link" do
         .fas.fa-home 
